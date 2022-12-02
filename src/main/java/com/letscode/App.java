@@ -8,14 +8,14 @@ public class App {
         System.out.println("Rodou!");
 
         Contato jose = new Contato();
-        jose.nome = "José";
-        jose.sobrenome = "Maria";
-        jose.tipo = TipoContato.Pessoal;
+        jose.setNome("José");
+        jose.setSobrenome("Maria");
+        jose.setTipo(TipoContato.Pessoal);
 
         Contato maria = new Contato();
-        maria.nome = "José";
-        maria.sobrenome = "Maria";
-        maria.tipo = TipoContato.Profissional;
+        maria.setNome("José");
+        maria.setSobrenome("Maria");
+        maria.setTipo(TipoContato.Profissional);
 
         Contato copia = jose;
 

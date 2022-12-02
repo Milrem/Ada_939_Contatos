@@ -6,20 +6,52 @@ import java.util.List;
 import java.util.Objects;
 
 public class Contato {
-    String nome;
-    String sobrenome;
-    TipoContato tipo;
+    private String nome;
+    private String sobrenome;
+    private TipoContato tipo;
 
-    List<Telefone> telefones;
-    List<Endereco> enderecos;
+    private List<Telefone> telefones;
+    private List<Endereco> enderecos;
 
-//    @Override
-//    public String toString() {
-//        return "Contato{" +
-//                "nome='" + nome + '\'' +
-//                ", sobrenome='" + sobrenome + '\'' +
-//                '}';
-//    }
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public TipoContato getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoContato tipo) {
+        this.tipo = tipo;
+    }
+
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
+    }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -33,4 +65,13 @@ public class Contato {
     public int hashCode() {
         return Objects.hash(nome, sobrenome, tipo);
     }
+
+    @Override
+    public String toString() {
+        return "Contato{" +
+                "nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                '}';
+    }
+
 }
