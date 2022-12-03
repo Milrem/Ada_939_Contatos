@@ -2,16 +2,43 @@ package com.letscode.model;
 
 import com.letscode.enums.TipoContato;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Contato {
     private String nome;
     private String sobrenome;
+
     private TipoContato tipo;
 
     private List<Telefone> telefones;
     private List<Endereco> enderecos;
+
+    public Contato(String nome) {
+        this(nome, "", TipoContato.Pessoal);
+    }
+
+    public Contato(String nome, String sobrenome) {
+        this(nome, sobrenome, TipoContato.Pessoal);
+    }
+
+    public Contato(String nome, TipoContato tipo) {
+        this(nome, "", tipo);
+    }
+
+    public Contato(String nome, String sobrenome, TipoContato tipo) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.sobrenome = sobrenome;
+        this.telefones = new ArrayList<>();
+        this.enderecos = new ArrayList<>();
+    }
+
+    public Contato(String nome, Telefone telefone) {
+        this(nome);
+        this.telefones.add(telefone);
+    }
 
     public String getNome() {
         return nome;
@@ -41,6 +68,10 @@ public class Contato {
         return telefones;
     }
 
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
     public void setTelefones(List<Telefone> telefones) {
         this.telefones = telefones;
     }
@@ -49,8 +80,12 @@ public class Contato {
         return enderecos;
     }
 
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
+    public String getNomeCompleto() {
+        String valor = nome;
+        if (!sobrenome.isBlank()) {
+            valor += " " + sobrenome;
+        }
+        return valor.trim();
     }
 
     @Override
