@@ -10,6 +10,23 @@ public class Telefone {
     private String ramal;
     private String contato;
 
+    public Telefone(TipoTelefone tipo, String ddd, String numero) {
+        this(tipo, "", ddd, numero, "", "");
+    }
+
+    public Telefone(TipoTelefone tipo, String ddd, String numero, String contato) {
+        this(tipo, "", ddd, numero, "", contato);
+    }
+
+    public Telefone(TipoTelefone tipo, String ddi, String ddd, String numero, String ramal, String contato) {
+        this.tipo = tipo;
+        this.ddi = ddi;
+        this.ddd = ddd;
+        this.numero = numero;
+        this.ramal = ramal;
+        this.contato = contato;
+    }
+
     public TipoTelefone getTipo() {
         return tipo;
     }
